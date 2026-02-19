@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-a94d926f196eb2d4908d2709c42dab08"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "type", "scale": {"domain": ["Movie", "TV Show"], "range": ["#1f77b4", "#ff7f0e"]}, "title": "Content Type", "type": "nominal"}, "tooltip": [{"field": "year_added", "title": "Year", "type": "ordinal"}, {"field": "type", "title": "Type", "type": "nominal"}, {"field": "count", "title": "Number of Titles", "type": "quantitative"}, {"field": "percentage", "format": ".1f", "title": "Percentage", "type": "quantitative"}], "x": {"axis": {"labelAngle": -45}, "field": "year_added", "title": "Year Added to Netflix", "type": "ordinal"}, "xOffset": {"field": "type", "type": "nominal"}, "y": {"field": "percentage", "scale": {"domain": [0, 100]}, "title": "Percentage of Content (%)", "type": "quantitative"}}, "height": 400, "title": "Netflix Content Evolution: Movies vs TV Shows (2008-2021)", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-a94d926f196eb2d4908d2709c42dab08": [{"year_added": 2008.0, "type": "Movie", "count": 1, "total": 2, "percentage": 50.0}, {"year_added": 2008.0, "type": "TV Show", "count": 1, "total": 2, "percentage": 50.0}, {"year_added": 2009.0, "type": "Movie", "count": 2, "total": 2, "percentage": 100.0}, {"year_added": 2010.0, "type": "Movie", "count": 1, "total": 1, "percentage": 100.0}, {"year_added": 2011.0, "type": "Movie", "count": 13, "total": 13, "percentage": 100.0}, {"year_added": 2012.0, "type": "Movie", "count": 3, "total": 3, "percentage": 100.0}, {"year_added": 2013.0, "type": "Movie", "count": 6, "total": 11, "percentage": 54.54545454545454}, {"year_added": 2013.0, "type": "TV Show", "count": 5, "total": 11, "percentage": 45.45454545454545}, {"year_added": 2014.0, "type": "Movie", "count": 19, "total": 24, "percentage": 79.16666666666666}, {"year_added": 2014.0, "type": "TV Show", "count": 5, "total": 24, "percentage": 20.833333333333336}, {"year_added": 2015.0, "type": "Movie", "count": 56, "total": 82, "percentage": 68.29268292682927}, {"year_added": 2015.0, "type": "TV Show", "count": 26, "total": 82, "percentage": 31.70731707317073}, {"year_added": 2016.0, "type": "Movie", "count": 253, "total": 429, "percentage": 58.97435897435898}, {"year_added": 2016.0, "type": "TV Show", "count": 176, "total": 429, "percentage": 41.02564102564102}, {"year_added": 2017.0, "type": "Movie", "count": 839, "total": 1188, "percentage": 70.62289562289563}, {"year_added": 2017.0, "type": "TV Show", "count": 349, "total": 1188, "percentage": 29.37710437710438}, {"year_added": 2018.0, "type": "Movie", "count": 1237, "total": 1649, "percentage": 75.01516070345664}, {"year_added": 2018.0, "type": "TV Show", "count": 412, "total": 1649, "percentage": 24.98483929654336}, {"year_added": 2019.0, "type": "Movie", "count": 1424, "total": 2016, "percentage": 70.63492063492063}, {"year_added": 2019.0, "type": "TV Show", "count": 592, "total": 2016, "percentage": 29.365079365079367}, {"year_added": 2020.0, "type": "Movie", "count": 1284, "total": 1879, "percentage": 68.33422032996275}, {"year_added": 2020.0, "type": "TV Show", "count": 595, "total": 1879, "percentage": 31.665779670037253}, {"year_added": 2021.0, "type": "Movie", "count": 993, "total": 1498, "percentage": 66.28838451268358}, {"year_added": 2021.0, "type": "TV Show", "count": 505, "total": 1498, "percentage": 33.71161548731642}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
