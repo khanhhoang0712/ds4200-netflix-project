@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-81d0f570f2cc4822e300f12bed0fb05f"}, "mark": {"type": "line", "point": true}, "encoding": {"tooltip": [{"field": "year_added", "type": "quantitative"}, {"field": "total_titles", "type": "quantitative"}], "x": {"field": "year_added", "title": "Year Added", "type": "ordinal"}, "y": {"field": "total_titles", "title": "Number of Titles", "type": "quantitative"}}, "height": 400, "title": "Total Netflix Content Growth Over Time", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-81d0f570f2cc4822e300f12bed0fb05f": [{"year_added": 2008, "total_titles": 2}, {"year_added": 2009, "total_titles": 2}, {"year_added": 2010, "total_titles": 1}, {"year_added": 2011, "total_titles": 13}, {"year_added": 2012, "total_titles": 3}, {"year_added": 2013, "total_titles": 11}, {"year_added": 2014, "total_titles": 24}, {"year_added": 2015, "total_titles": 82}, {"year_added": 2016, "total_titles": 429}, {"year_added": 2017, "total_titles": 1188}, {"year_added": 2018, "total_titles": 1649}, {"year_added": 2019, "total_titles": 2016}, {"year_added": 2020, "total_titles": 1879}, {"year_added": 2021, "total_titles": 1498}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
