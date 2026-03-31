@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-c20843f4a23b68b2e27ac6a3c86d41ad"}, "mark": {"type": "bar", "color": "#E50914"}, "encoding": {"tooltip": [{"field": "year_added", "title": "Year", "type": "ordinal"}, {"field": "avg_budget", "format": ".1f", "title": "Avg Budget ($M)", "type": "quantitative"}, {"field": "num_titles", "title": "Number of Movies", "type": "quantitative"}], "x": {"field": "year_added", "title": "Year Added to Netflix", "type": "ordinal"}, "y": {"field": "avg_budget", "title": "Average Movie Budget ($ Millions)", "type": "quantitative"}}, "height": 400, "title": "Average Budget of Movies Added to Netflix by Year (2016-2021)", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-c20843f4a23b68b2e27ac6a3c86d41ad": [{"year_added": 2016, "avg_budget": 17.4988441, "num_titles": 20}, {"year_added": 2017, "avg_budget": 20.106873928571428, "num_titles": 56}, {"year_added": 2018, "avg_budget": 18.159762759036145, "num_titles": 83}, {"year_added": 2019, "avg_budget": 39.92846888353414, "num_titles": 249}, {"year_added": 2020, "avg_budget": 37.88262026728111, "num_titles": 217}, {"year_added": 2021, "avg_budget": 40.16877690082645, "num_titles": 242}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
