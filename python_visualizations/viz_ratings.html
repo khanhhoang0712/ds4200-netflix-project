@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-c37cdd0a1e14d9ec0979bc08ca22becc"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "rating_group", "title": "Rating Group", "type": "nominal"}, "opacity": {"condition": {"param": "param_f54bae34dc31a56e", "value": 1}, "value": 0.1}, "tooltip": [{"field": "year_added", "title": "Year", "type": "ordinal"}, {"field": "rating_group", "title": "Rating Group", "type": "nominal"}, {"field": "count", "title": "Number of Titles", "type": "quantitative"}, {"field": "percentage", "format": ".1f", "title": "Percentage", "type": "quantitative"}], "x": {"axis": {"labelAngle": 0}, "field": "year_added", "title": "Year Added to Netflix", "type": "ordinal"}, "xOffset": {"field": "rating_group", "type": "nominal"}, "y": {"field": "percentage", "scale": {"domain": [0, 100]}, "title": "Percentage of Content (%)", "type": "quantitative"}}, "height": 400, "params": [{"name": "param_f54bae34dc31a56e", "select": {"type": "point", "fields": ["rating_group"]}, "bind": {"input": "select", "options": [null, "Mature", "Teen", "Older Kids", "Kids", "Other"], "labels": ["All", "Mature", "Teen", "Older Kids", "Kids", "Other"], "name": "Rating Group: "}}], "title": "Netflix Content Rating Distribution by Year (2016-2021)", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-c37cdd0a1e14d9ec0979bc08ca22becc": [{"year_added": 2016, "rating_group": "Kids", "count": 65, "total": 428, "percentage": 15.186915887850466}, {"year_added": 2016, "rating_group": "Mature", "count": 177, "total": 428, "percentage": 41.35514018691589}, {"year_added": 2016, "rating_group": "Older Kids", "count": 53, "total": 428, "percentage": 12.38317757009346}, {"year_added": 2016, "rating_group": "Other", "count": 29, "total": 428, "percentage": 6.775700934579438}, {"year_added": 2016, "rating_group": "Teen", "count": 104, "total": 428, "percentage": 24.299065420560748}, {"year_added": 2017, "rating_group": "Kids", "count": 108, "total": 1186, "percentage": 9.106239460370997}, {"year_added": 2017, "rating_group": "Mature", "count": 513, "total": 1186, "percentage": 43.25463743676223}, {"year_added": 2017, "rating_group": "Older Kids", "count": 187, "total": 1186, "percentage": 15.767284991568298}, {"year_added": 2017, "rating_group": "Other", "count": 26, "total": 1186, "percentage": 2.1922428330522767}, {"year_added": 2017, "rating_group": "Teen", "count": 352, "total": 1186, "percentage": 29.679595278246207}, {"year_added": 2018, "rating_group": "Kids", "count": 134, "total": 1648, "percentage": 8.13106796116505}, {"year_added": 2018, "rating_group": "Mature", "count": 779, "total": 1648, "percentage": 47.26941747572816}, {"year_added": 2018, "rating_group": "Older Kids", "count": 217, "total": 1648, "percentage": 13.16747572815534}, {"year_added": 2018, "rating_group": "Other", "count": 14, "total": 1648, "percentage": 0.8495145631067961}, {"year_added": 2018, "rating_group": "Teen", "count": 504, "total": 1648, "percentage": 30.582524271844655}, {"year_added": 2019, "rating_group": "Kids", "count": 157, "total": 2016, "percentage": 7.787698412698413}, {"year_added": 2019, "rating_group": "Mature", "count": 945, "total": 2016, "percentage": 46.875}, {"year_added": 2019, "rating_group": "Older Kids", "count": 279, "total": 2016, "percentage": 13.839285714285715}, {"year_added": 2019, "rating_group": "Other", "count": 6, "total": 2016, "percentage": 0.2976190476190476}, {"year_added": 2019, "rating_group": "Teen", "count": 629, "total": 2016, "percentage": 31.200396825396822}, {"year_added": 2020, "rating_group": "Kids", "count": 227, "total": 1879, "percentage": 12.080894092602447}, {"year_added": 2020, "rating_group": "Mature", "count": 859, "total": 1879, "percentage": 45.71580627993614}, {"year_added": 2020, "rating_group": "Older Kids", "count": 232, "total": 1879, "percentage": 12.346993081426293}, {"year_added": 2020, "rating_group": "Teen", "count": 561, "total": 1879, "percentage": 29.85630654603513}, {"year_added": 2021, "rating_group": "Kids", "count": 192, "total": 1498, "percentage": 12.817089452603472}, {"year_added": 2021, "rating_group": "Mature", "count": 679, "total": 1498, "percentage": 45.32710280373832}, {"year_added": 2021, "rating_group": "Older Kids", "count": 155, "total": 1498, "percentage": 10.347129506008011}, {"year_added": 2021, "rating_group": "Teen", "count": 472, "total": 1498, "percentage": 31.5086782376502}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
