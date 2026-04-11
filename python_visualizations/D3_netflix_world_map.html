@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Netflix Titles by Country</title>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #f7f7f7;
+    }
+
+    svg {
+      background: white;
+      border: 1px solid #ccc;
+    }
+
+    .tooltip {
+      position: absolute;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 6px;
+      border-radius: 5px;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    select {
+      padding: 6px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Netflix Titles by Country</h1>
+<p>Darker red = more titles</p>
+
+<select id="filter">
+  <option value="All">All Titles</option>
+  <option value="Movie">Movies Only</option>
+  <option value="TV Show">TV Shows Only</option>
+</select>
+
+<div id="tooltip" class="tooltip"></div>
+
+<svg width="1100" height="600"></svg>
+
+<script>
+
+const svg = d3.select("svg");
+const tooltip = d3.select("#tooltip");
+
+const projection = d3.geoNaturalEarth1()
+  .scale(180)
+  .translate([550, 300]);
+
+const path = d3.geoPath().projection(projection);
+
+// Fix name mismatches
+const nameFixes = {
+  "United States of America": "United States",
+  "Russian Federation": "Russia",
+  "Korea, Republic of": "South Korea"
+};
+
+let geoData;
+let rawData;
+let currentCounts;
+
+// Load data
+Promise.all([
+  d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"),
+  d3.csv("../data/netflix_by_country_type.csv")
+]).then(([world, data]) => {
+
+  geoData = topojson.feature(world, world.objects.countries).features;
+  rawData = data;
+
+  updateMap("All");
+
+  d3.select("#filter").on("change", function() {
+    updateMap(this.value);
+  });
+
+});
+
+function computeCounts(data, type) {
+  let filtered = data;
+
+  if (type !== "All") {
+    filtered = data.filter(d => d.type === type);
+  }
+
+  const counts = new Map();
+
+  filtered.forEach(d => {
+    counts.set(d.country, (counts.get(d.country) || 0) + 1);
+  });
+
+  return counts;
+}
+
+function updateMap(type) {
+
+  currentCounts = computeCounts(rawData, type);
+
+  const maxCount = d3.max([...currentCounts.values()]);
+
+  const colorScale = d3.scaleSequentialLog()
+    .domain([1, maxCount])
+    .interpolator(d3.interpolateReds);
+
+  svg.selectAll("path")
+    .data(geoData)
+    .join("path")
+    .attr("d", path)
+    .attr("stroke", "#999")
+    .attr("stroke-width", 0.6)
+    .on("mouseover", function(event, d) {
+
+      const name = nameFixes[d.properties.name] || d.properties.name;
+      const count = currentCounts.get(name) || 0;
+
+      d3.select(this)
+        .attr("stroke", "black")
+        .attr("stroke-width", 1.5);
+
+      tooltip
+        .style("opacity", 1)
+        .html(`<strong>${name}</strong><br>Titles: ${count}`);
+    })
+    .on("mousemove", function(event) {
+      tooltip
+        .style("left", (event.pageX + 10) + "px")
+        .style("top", (event.pageY - 20) + "px");
+    })
+    .on("mouseout", function() {
+      d3.select(this)
+        .attr("stroke", "#999")
+        .attr("stroke-width", 0.6);
+
+      tooltip.style("opacity", 0);
+    })
+    .transition()
+    .duration(500)
+    .attr("fill", d => {
+
+      const name = nameFixes[d.properties.name] || d.properties.name;
+      const count = currentCounts.get(name) || 0;
+
+      return count > 0 ? colorScale(count) : "#e0e0e0";
+    });
+
+}
+
+</script>
+
+</body>
+</html>
