@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Netflix Content Strategy Evolution (2016–2021)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      color: #222;
+      background: #fff;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 40px 60px;
+      line-height: 1.7;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      color: #E50914;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: #E50914;
+      border-bottom: 2px solid #E50914;
+      padding-bottom: 4px;
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 15px;
+      margin-top: 24px;
+      margin-bottom: 6px;
+      color: #222;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    a { color: #1a0dab; }
+
+    table {
+      border-collapse: collapse;
+      margin: 16px auto;
+      font-size: 14px;
+    }
+
+    table td {
+      border: 1px solid #aaa;
+      padding: 6px 16px;
+    }
+
+    table tr:first-child {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    .viz-block {
+      margin: 20px 0 36px;
+    }
+
+    .viz-block iframe {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #ccc;
+      display: block;
+    }
+
+    .viz-takeaway {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .viz-takeaway b {
+      color: #E50914;
+      display: inline;
+    }
+
+    .placeholder-text {
+      color: #aaa;
+      font-style: italic;
+    }
+
+    .placeholder-viz {
+      width: 100%;
+      height: 500px;
+      border: 1px dashed #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 36px 0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Netflix Content Strategy Evolution (2016–2021)</h1>
+<p class="subtitle">DS4200 Information Presentation and Data Visualization &nbsp;·&nbsp; Khanh Hoang, Alma Abubakari, Kittirat Trakulsujaritchok</p>
+
+<h2>Overall Introduction</h2>
+<p class="placeholder-text">[Write your introduction here — explain the topic, why it is interesting, and what questions you are trying to answer.]</p>
+<p class="placeholder-text">[Add a second paragraph if needed. Include links to your 2 references somewhere in this section.]</p>
+
+<hr>
+
+<h2>Introduction to the Data</h2>
+<p class="placeholder-text">[Describe the dataset here — where it comes from, how many rows and columns, what time period it covers, and what kinds of variables it has.]</p>
+
+<table>
+  <tr><td>Variable Name</td><td>Details</td></tr>
+  <tr><td>show_id</td><td>Unique identifier for each title</td></tr>
+  <tr><td>type</td><td>Content type: Movie or TV Show</td></tr>
+  <tr><td>title</td><td>Title of the content</td></tr>
+  <tr><td>director</td><td>Director(s) of the title</td></tr>
+  <tr><td>country</td><td>Country of origin</td></tr>
+  <tr><td>date_added</td><td>Date the title was added to Netflix</td></tr>
+  <tr><td>release_year</td><td>Year the title was originally released</td></tr>
+  <tr><td>rating</td><td>Content rating (e.g. TV-MA, PG-13, TV-Y)</td></tr>
+  <tr><td>duration</td><td>Duration in minutes (movies) or number of seasons (TV shows)</td></tr>
+  <tr><td>listed_in</td><td>Genre categories</td></tr>
+  <tr><td>year_added</td><td>Year added to Netflix (extracted from date_added)</td></tr>
+  <tr><td>budget</td><td>Production budget in USD (merged from movies_metadata.csv)</td></tr>
+</table>
+
+<p class="placeholder-text">[Add any notes about limitations of the dataset or why it is suitable for your analysis.]</p>
+
+<hr>
+
+<h2>Data Visualizations</h2>
+
+<h3>1. Netflix Catalog Growth Over Time (2016–2021)</h3>
+<p class="placeholder-text">[Brief description of what this chart shows and how to interact with it.]</p>
+<div class="viz-block">
+  <iframe src="../python_visualizations/total_growth.html" title="Netflix Total Growth"></iframe>
+  <div class="viz-takeaway">
+    <b>Takeaway: </b><span class="placeholder-text">[Write 2–3 sentences about what you observe in this chart.]</span>
+  </div>
+</div>
+
+<h3>2. Movies vs. TV Shows Added Per Year (2016–2021)</h3>
+<p class="placeholder-text">[Brief description of what this chart shows and how to interact with it.]</p>
+<div class="viz-block">
+  <iframe src="../python_visualizations/viz1_movies_vs_shows.html" title="Movies vs TV Shows"></iframe>
+  <div class="viz-takeaway">
+    <b>Takeaway: </b><span class="placeholder-text">[Write 2–3 sentences about what you observe in this chart.]</span>
+  </div>
+</div>
+
+<h3>3. Average Movie Budget Over Time (2016–2021)</h3>
+<p class="placeholder-text">[Brief description of what this chart shows and how to interact with it.]</p>
+<div class="viz-block">
+  <iframe src="../python_visualizations/viz_budget_over_time.html" title="Budget Over Time"></iframe>
+  <div class="viz-takeaway">
+    <b>Takeaway: </b><span class="placeholder-text">[Write 2–3 sentences about what you observe in this chart.]</span>
+  </div>
+</div>
+
+<h3>4. Content Rating Distribution by Year (2016–2021)</h3>
+<p class="placeholder-text">[Brief description of what this chart shows and how to interact with it.]</p>
+<div class="viz-block">
+  <iframe src="../python_visualizations/viz_ratings.html" title="Content Ratings"></iframe>
+  <div class="viz-takeaway">
+    <b>Takeaway: </b><span class="placeholder-text">[Write 2–3 sentences about what you observe in this chart.]</span>
+  </div>
+</div>
+
+<h3>5. D3 Visualization</h3>
+<p class="placeholder-text">[Brief description of what this chart shows and how to interact with it.]</p>
+<div class="viz-block">
+  <div class="placeholder-viz">D3 visualization coming soon</div>
+  <div class="viz-takeaway">
+    <b>Takeaway: </b><span class="placeholder-text">[Write 2–3 sentences about what you observe in this chart.]</span>
+  </div>
+</div>
+
+<hr>
+
+<h2>Summary and Additional Work</h2>
+<p class="placeholder-text">[Summarize your 2–3 main conclusions from the visualizations. What did you learn about Netflix's content strategy?]</p>
+<p class="placeholder-text">[Describe what future work could be done — what data is missing, what other questions could be explored?]</p>
+
+</body>
+</html>
