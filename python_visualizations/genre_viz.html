@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "strokeWidth": 3}, "encoding": {"color": {"field": "genre", "scale": {"scheme": "tableau10"}, "title": "Genre", "type": "nominal"}, "opacity": {"condition": {"param": "param_110308d48493f447", "value": 1}, "value": 0.1}, "tooltip": [{"field": "year_added", "title": "Year", "type": "ordinal"}, {"field": "genre", "title": "Genre", "type": "nominal"}, {"field": "rank", "title": "Rank", "type": "ordinal"}, {"field": "count", "title": "Number of Titles", "type": "quantitative"}], "x": {"axis": {"labelAngle": 0}, "field": "year_added", "title": "Year", "type": "ordinal"}, "y": {"field": "rank", "scale": {"domain": [1, 2, 3, 4, 5, 6, 7, 8]}, "title": "Rank", "type": "ordinal"}}, "name": "view_7b8d75c26fdb13bd_0"}, {"mark": {"type": "circle", "size": 100}, "encoding": {"color": {"field": "genre", "scale": {"scheme": "tableau10"}, "type": "nominal"}, "opacity": {"condition": {"param": "param_110308d48493f447", "value": 1}, "value": 0.1}, "tooltip": [{"field": "year_added", "title": "Year", "type": "ordinal"}, {"field": "genre", "title": "Genre", "type": "nominal"}, {"field": "rank", "title": "Rank", "type": "ordinal"}, {"field": "count", "title": "Number of Titles", "type": "quantitative"}], "x": {"field": "year_added", "type": "ordinal"}, "y": {"field": "rank", "type": "ordinal"}}}], "data": {"name": "data-d9edf6bd35e1d7942aee596470f1b715"}, "height": 400, "params": [{"name": "param_110308d48493f447", "select": {"type": "point", "fields": ["genre"]}, "bind": "legend", "views": ["view_7b8d75c26fdb13bd_0"]}], "title": "Netflix Genre Rankings Over Time (2016-2021)", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-d9edf6bd35e1d7942aee596470f1b715": [{"year_added": 2016, "genre": "Action & Adventure", "count": 18, "rank": 8}, {"year_added": 2016, "genre": "Comedies", "count": 48, "rank": 5}, {"year_added": 2016, "genre": "Documentaries", "count": 68, "rank": 3}, {"year_added": 2016, "genre": "Dramas", "count": 65, "rank": 4}, {"year_added": 2016, "genre": "Independent Movies", "count": 31, "rank": 7}, {"year_added": 2016, "genre": "International Movies", "count": 82, "rank": 2}, {"year_added": 2016, "genre": "International TV Shows", "count": 86, "rank": 1}, {"year_added": 2016, "genre": "TV Dramas", "count": 43, "rank": 6}, {"year_added": 2017, "genre": "Action & Adventure", "count": 97, "rank": 8}, {"year_added": 2017, "genre": "Comedies", "count": 177, "rank": 5}, {"year_added": 2017, "genre": "Documentaries", "count": 206, "rank": 3}, {"year_added": 2017, "genre": "Dramas", "count": 293, "rank": 2}, {"year_added": 2017, "genre": "Independent Movies", "count": 116, "rank": 7}, {"year_added": 2017, "genre": "International Movies", "count": 395, "rank": 1}, {"year_added": 2017, "genre": "International TV Shows", "count": 205, "rank": 4}, {"year_added": 2017, "genre": "TV Dramas", "count": 130, "rank": 6}, {"year_added": 2018, "genre": "Action & Adventure", "count": 173, "rank": 5}, {"year_added": 2018, "genre": "Comedies", "count": 297, "rank": 3}, {"year_added": 2018, "genre": "Documentaries", "count": 167, "rank": 6}, {"year_added": 2018, "genre": "Dramas", "count": 531, "rank": 2}, {"year_added": 2018, "genre": "Independent Movies", "count": 163, "rank": 7}, {"year_added": 2018, "genre": "International Movies", "count": 668, "rank": 1}, {"year_added": 2018, "genre": "International TV Shows", "count": 214, "rank": 4}, {"year_added": 2018, "genre": "TV Dramas", "count": 109, "rank": 8}, {"year_added": 2019, "genre": "Action & Adventure", "count": 202, "rank": 5}, {"year_added": 2019, "genre": "Comedies", "count": 420, "rank": 3}, {"year_added": 2019, "genre": "Documentaries", "count": 188, "rank": 7}, {"year_added": 2019, "genre": "Dramas", "count": 564, "rank": 2}, {"year_added": 2019, "genre": "Independent Movies", "count": 201, "rank": 6}, {"year_added": 2019, "genre": "International Movies", "count": 610, "rank": 1}, {"year_added": 2019, "genre": "International TV Shows", "count": 335, "rank": 4}, {"year_added": 2019, "genre": "TV Dramas", "count": 164, "rank": 8}, {"year_added": 2020, "genre": "Action & Adventure", "count": 170, "rank": 5}, {"year_added": 2020, "genre": "Comedies", "count": 416, "rank": 3}, {"year_added": 2020, "genre": "Documentaries", "count": 118, "rank": 8}, {"year_added": 2020, "genre": "Dramas", "count": 535, "rank": 2}, {"year_added": 2020, "genre": "Independent Movies", "count": 148, "rank": 7}, {"year_added": 2020, "genre": "International Movies", "count": 575, "rank": 1}, {"year_added": 2020, "genre": "International TV Shows", "count": 277, "rank": 4}, {"year_added": 2020, "genre": "TV Dramas", "count": 164, "rank": 6}, {"year_added": 2021, "genre": "Action & Adventure", "count": 196, "rank": 5}, {"year_added": 2021, "genre": "Comedies", "count": 299, "rank": 3}, {"year_added": 2021, "genre": "Documentaries", "count": 99, "rank": 7}, {"year_added": 2021, "genre": "Dramas", "count": 412, "rank": 1}, {"year_added": 2021, "genre": "Independent Movies", "count": 89, "rank": 8}, {"year_added": 2021, "genre": "International Movies", "count": 408, "rank": 2}, {"year_added": 2021, "genre": "International TV Shows", "count": 229, "rank": 4}, {"year_added": 2021, "genre": "TV Dramas", "count": 137, "rank": 6}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
