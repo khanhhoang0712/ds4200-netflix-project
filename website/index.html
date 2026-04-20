@@ -129,43 +129,7 @@
 
 <h2>Data Visualizations</h2>
 
-<h3>1. Netflix Catalog Growth Over Time (2016–2021)</h3>
-<p>This line chart shows how the total number of titles added to Netflix changed from 2016 to 2021. Hover over any point on the line to view the exact number of titles added that year and follow the overall growth trend across time.</p>
-<div class="viz-block">
-  <iframe src="../python_visualizations/total_growth.html" title="Netflix Total Growth"></iframe>
-  <div class="viz-takeaway">
-    <b>Takeaway: </b>Netflix's catalog grew rapidly from 2016 through 2019, reaching its peak around 2019 with the highest number of titles added in a single year. After that, the number of new titles began to decline in 2020 and 2021. This slowdown is likely caused by a few factors: the impact of COVID-19 on global content production, and perhaps a broader strategic shift away from quantity toward fewer but higher quality productions. This pattern suggests that Netflix's early growth strategy was focused on rapidly expanding its library, before transitioning into a more selective approach as competition from other platforms intensified.
-  </div>
-</div>
-
-<h3>2. Movies vs. TV Shows Added Per Year (2016–2021)</h3>
-<p>This grouped bar chart compares the percentage of Movies and TV Shows added to Netflix each year from 2016 to 2021. Each year has two bars, allowing viewers to compare the share of movies versus TV shows added that year. Hover over any bar to see the exact percentage and count. You can also click on a category in the legend to highlight or hide that content type.</p>
-<div class="viz-block">
-  <iframe src="../python_visualizations/viz1_movies_vs_shows.html" title="Movies vs TV Shows"></iframe>
-  <div class="viz-takeaway">
-    <b>Takeaway: </b>Movies made up the larger share of Netflix content every year between 2016 and 2021, consistently making up roughly 60-75% of all titles added. However, the movie share peaked around 2018 and gradually declined after that, and the share of TV shows increased slightly. This shift indicates a change in consumer preference and perhaps a strategic change, as TV shows tend to drive stronger viewer engagement through longer formats which encourages subscribers to spend more time on the platform. This suggests that while Netflix still prioritizes movies more, its strategy is slowly shifting towards growing its shows catalog to improve customer retention.
-  </div>
-</div>
-
-<h3>3. Average Movie Budget Over Time (2016–2021)</h3>
-<p>This bar chart shows the average production budget of movies added to Netflix each year from 2016 to 2021. The x-axis shows the year and the y-axis represents the average movie budget in millions of dollars. Hover over any bar to see the exact average budget and the number of movies that were used to calculate that average for that year.</p>
-<div class="viz-block">
-  <iframe src="../python_visualizations/viz_budget_over_time.html" title="Budget Over Time"></iframe>
-  <div class="viz-takeaway">
-    <b>Takeaway: </b>Average movie budgets on Netflix were relatively lower between 2016 and 2018, then increased noticeably starting in 2019. There is a slight dip in 2020 likely due to COVID-19 disrupting production schedules and financing. But overall, the average budget remained significantly higher than in the earlier years and rose again in 2021. This trend supports what we observed in the catalog growth chart: as the total number of titles added began to decline after 2019, the average budget per movie increased, indicating that Netflix deliberately shifted its strategy away from adding large volumes of content toward investing in fewer but higher-budget and more premium productions.
-  </div>
-</div>
-
-<h3>4. Content Rating Distribution by Year (2016–2021)</h3>
-<p>This grouped bar chart shows how Netflix content ratings were distributed across years from 2016 to 2021. Each color represents a different rating category. Hover over any bar to see the exact count and percentage, and use the dropdown menu to filter by a specific rating group.</p>
-<div class="viz-block">
-  <iframe src="../python_visualizations/viz_ratings.html" title="Content Ratings"></iframe>
-  <div class="viz-takeaway">
-    <b>Takeaway: </b>Mature-rated content has consistently dominated Netflix's catalog every year, accounting for roughly 40-47% of all titles added between 2016 and 2021. Teen-rated content is the second largest group, making up around 30% of titles, while Kids and Older Kids content together remain below 30% combined across all years. The proportions stayed stable over the entire period, which suggests this is a deliberate and sustained content strategy. Netflix clearly prioritizes adult audiences as its core demographic, which also differentiates it from more family-oriented competitors like Disney+.
-  </div>
-</div>
-
-<h3>5. Geographic Distribution of Netflix Content (D3)</h3>
+<h3>1. Geographic Distribution of Netflix Content</h3>
 <p>This interactive world map shows the geographic distribution of Netflix content by country of origin. Each country is shaded in red, with darker colors indicating a higher number of titles produced in that country. Use the dropdown menu to filter the map by content type — All Titles, Movies Only, or TV Shows Only. Hover over any country to see its name and the exact number of Netflix titles it has produced.</p>
 <div class="viz-block">
   <iframe src="../python_visualizations/D3_netflix_world_map.html" title="D3 World Map" style="height: 650px;"></iframe>
@@ -174,12 +138,48 @@
   </div>
 </div>
 
+<h3>2. Netflix Content Growth and Type Evolution (2016–2021)</h3>
+<p>This side-by-side line chart shows two related trends. The left chart tracks the total number of titles added to Netflix each year from 2016 to 2021. The right chart shows how the share of Movies versus TV Shows shifted over the same period. Hover over any point to see exact values, and click on a content type in the legend to highlight or fade that line.</p>
+<div class="viz-block">
+  <iframe src="../python_visualizations/viz1_movies_vs_shows.html" title="Content Growth and Type Evolution"></iframe>
+  <div class="viz-takeaway">
+    <b>Takeaway: </b>Netflix's catalog grew rapidly from 2016 through 2019, peaking at over 2,000 titles added in a single year before declining in 2020 and 2021, likely due to COVID-19 disruptions and a broader strategic shift toward quality over quantity. At the same time, movies consistently made up the larger share of content — roughly 60 to 75% each year — though their dominance gradually declined as the share of TV shows slowly increased. This suggests Netflix was not only scaling back total output but also rebalancing its catalog toward more episodic content, which tends to drive stronger viewer engagement and longer time spent on the platform.
+  </div>
+</div>
+
+<h3>3. Netflix Genre Rankings Over Time (2016–2021)</h3>
+<p>This bump chart tracks how the top 8 genres on Netflix were ranked each year from 2016 to 2021, based on the number of titles added. Each colored line represents one genre, and its vertical position shows whether it ranked higher or lower that year compared to others. Click on any genre in the legend to highlight its trend and fade the others.</p>
+<div class="viz-block">
+  <iframe src="../python_visualizations/genre_viz.html" title="Genre Rankings"></iframe>
+  <div class="viz-takeaway">
+    <b>Takeaway: </b>International Movies and Dramas consistently ranked at the top throughout the period, reflecting Netflix's strong focus on globally appealing content. However, there were notable shifts — Documentaries rose in ranking around 2017 and 2018 before falling back, suggesting a temporary spike in demand for non-fiction content. Independent Movies declined steadily in rank over time, which may reflect a shift away from smaller productions toward bigger budget titles. Overall, the genre rankings show that Netflix's content strategy was not static — it continuously adjusted which types of content it prioritized in response to audience demand and competitive pressures.
+  </div>
+</div>
+
+<h3>4. Distribution of Movie Budgets on Netflix (2016–2021)</h3>
+<p>This layered chart combines a boxplot with an average trend line to show how movie production budgets were distributed across years from 2016 to 2021. Each boxplot shows the spread and variance of budgets for that year, while the yellow line tracks the average budget over time. Hover over any element to see exact budget values.</p>
+<div class="viz-block">
+  <iframe src="../python_visualizations/viz_budget_over_time.html" title="Budget Distribution"></iframe>
+  <div class="viz-takeaway">
+    <b>Takeaway: </b>Average movie budgets on Netflix were relatively low and consistent between 2016 and 2018, then increased noticeably starting in 2019. The boxplots also reveal that budget variance grew significantly after 2018 — Netflix was not just spending more on average, but also taking on a wider range of productions from lower budget indie films to high budget blockbusters. This pattern supports the broader story of Netflix shifting from a strategy of adding large volumes of affordable content to one that includes more premium, high-investment productions alongside a continued presence of independent films.
+  </div>
+</div>
+
+<h3>5. Netflix Content Rating Distribution by Year (2016–2021)</h3>
+<p>This heatmap shows how the share of each content rating group changed across years from 2016 to 2021. Rows represent rating categories ordered from youngest to most mature audiences, and the color intensity shows the percentage of content in each group for that year. Each cell also displays the exact percentage. Hover over any cell for more details.</p>
+<div class="viz-block">
+  <iframe src="../python_visualizations/viz_ratings.html" title="Content Ratings Heatmap"></iframe>
+  <div class="viz-takeaway">
+    <b>Takeaway: </b>Mature-rated content has consistently dominated Netflix's catalog every year, accounting for roughly 40 to 47% of all titles added between 2016 and 2021. Teen-rated content is the second largest group at around 30%, while Kids and Older Kids content together remain below 30% combined. The proportions stayed remarkably stable over the entire period, which suggests this is a deliberate and sustained content strategy rather than a shifting trend. Netflix clearly prioritizes adult audiences as its core demographic, which also differentiates it from more family-oriented competitors like Disney+.
+  </div>
+</div>
+
 <hr>
 
 <h2>Summary and Additional Work</h2>
-<p>From these visualizations, one of the main conclusions is that Netflix expanded its catalog very quickly between 2016 and 2019, suggesting a strong period of aggressive growth before slowing down after 2019, likely influenced by COVID-19 and increasing competition. A second major conclusion is that while movies consistently made up the larger share of Netflix content, TV shows grew in importance over time, suggesting that Netflix is broadening its approach to retain subscribers through longer content. A third key finding is that average movie budgets increased in the later years while mature-rated content consistently dominated the catalog, which shows that Netflix was not only adding more content but investing more heavily in premium content targeted at adult audiences. Finally, the geographic distribution of content shows that Netflix's catalog remains heavily concentrated in a small number of markets — particularly the United States, India, and the United Kingdom — which reflects where its largest subscriber bases are located.</p>
+<p>From these visualizations, several key conclusions emerge about Netflix's content strategy from 2016 to 2021. First, Netflix expanded its catalog aggressively through 2019 before pulling back, shifting from a volume-first approach to a more selective, quality-focused strategy. Second, while movies consistently dominated the catalog, the gradual rise of TV shows suggests Netflix recognized the value of episodic content for retaining subscribers. Third, genre rankings shifted over time — International Movies and Dramas remained dominant, but fluctuations in genres like Documentaries and Independent Movies reveal that Netflix continuously adjusted its priorities in response to audience demand. Fourth, average movie budgets increased significantly after 2018 and variance grew, indicating Netflix was investing in a wider range of productions including more premium content. Finally, mature-rated content remained the dominant category throughout, confirming that Netflix's core audience targeting strategy remained consistent even as other aspects of its catalog evolved.</p>
 
-<p>For future work, distinguishing between Netflix original content and licensed content would provide insights into how Netflix's investment in originals has changed over time. Rather than just measuring what was added to the catalog, adding viewership data would also allow for a more complete analysis of which content strategies actually resonated with audiences. There are also some limitations to this analysis worth noting. The dataset only covers content from 2016 to 2021, which is a relatively short window and does not fully capture how Netflix's strategy has continued to evolve in response to more recent challenges such as password sharing restrictions, the introduction of a new ad-supported subscription tier, and intensifying competition. Additionally, the financial budget data was only available for a subset of movies, which means the budget analysis may not fully represent the entire catalog.</p>
+<p>For future work, distinguishing between Netflix original content and licensed content would provide insights into how Netflix's investment in originals has changed over time. Adding viewership data would also allow for a more complete analysis of which content strategies actually resonated with audiences. There are also some limitations worth noting. The dataset only covers content from 2016 to 2021 and does not capture more recent developments such as password sharing restrictions, the introduction of an ad-supported tier, and intensifying competition. Additionally, the financial budget data was only available for a subset of movies, which means the budget analysis may not fully represent the entire catalog.</p>
 
 </body>
 </html>
